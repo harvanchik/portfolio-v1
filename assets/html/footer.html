@@ -1,0 +1,75 @@
+<!-- Container -->
+<div class="container-fluid bg-grey-dark px-0 py-5">
+    <div class="container">
+        <!-- Footer -->
+        <div class="row"
+             style="display: flex; justify-content: space-between; color: rgb(245, 245, 245);">
+            <div class="col-12 col-lg-4 px-4 mb-4">
+                <h4 class="footer-title">ABOUT</h4>
+                <hr class="footer-divider">
+                <p class="footer-text">My name is Jake Harvanchik, and I am currently
+                    <span id="myAge"></span> years old. I enjoy baseball, hockey, computers, nature, and comedy. I reside in Los Angeles County where I have lived my entire life. Currently, I am a junior software developer for a small business dealing with agribusinesses.
+                </p>
+            </div>
+            <div class="col-12 col-lg-4 px-4 mb-4">
+                <h4 class="footer-title">LINKS</h4>
+                <hr class="footer-divider">
+            </div>
+            <div class="col-12 col-lg-4 px-4 mb-4">
+                <h4 class="footer-title">CONTACT</h4>
+                <hr class="footer-divider">
+                <p class="footer-text">
+                    Feel free to contact me via any of the listed platforms below. You may also send me an email to the address
+                    <a href="mailto:jake.work@harvhouse.com"
+                       target="_blank"
+                       class="text-success">jake.work@harvhouse.com</a>.
+                </p>
+                <div class="row" style="display: flex; justify-content: space-between;">
+                    <a href="https://twitter.com/harvanchik"
+                       target="_blank"
+                       data-toggle="tooltip" title="Twitter">
+                        <img src="/assets/img/svg/twitter-circle.svg"
+                             class="mx-3 media-icon"
+                             style="width: 40px;">
+                    </a>
+                    <a href="https://www.instagram.com/harvanchik/"
+                       target="_blank"
+                       data-toggle="tooltip" title="Instagram">
+                        <img src="/assets/img/svg/instagram-circle.svg"
+                             class="mx-3 media-icon"
+                             style="width: 40px;">
+                    </a>
+                    <a href="https://www.linkedin.com/in/jake-harvanchik-255777157"
+                       target="_blank"
+                       data-toggle="tooltip" title="LinkedIn">
+                        <img src="/assets/img/svg/linkedin-circle.svg"
+                             class="mx-3 media-icon"
+                             style="width: 40px;">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCZ-FNPTXy4XRJ_WdBgg-geg"
+                       target="_blank"
+                       data-toggle="tooltip" title="YouTube">
+                        <img src="/assets/img/svg/youtube.svg"
+                             class="mx-3 media-icon"
+                             style="width: 40px;">
+                    </a>
+                    <a href="https://github.com/harvanchik"
+                       target="_blank"
+                       data-toggle="tooltip" title="GitHub">
+                        <img src="/assets/img/svg/github-circle.svg"
+                             class="mx-3 media-icon"
+                             style="width: 40px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Tooltips
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    // Age
+    document.getElementById("myAge").innerHTML = this.getAge('12/23/1999');
+</script>
