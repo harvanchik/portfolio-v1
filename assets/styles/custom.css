@@ -15,6 +15,7 @@
 }
 .media-icon {
     filter: grayscale(60%);
+    margin: 0px 15px !important;
 }
 .media-icon:hover {
     filter: grayscale(0%);
@@ -34,4 +35,16 @@
     text-align: justify;
     font-family: 'Tajawal', sans-serif;
     font-size: 15px;
+}
+.table {
+    margin: 30px 0;
+}
+a {
+    color: #6161ff;
+}
+a:hover {
+    color: #874af8;
+}
+a:active {
+    color: #4a2392;
 }
