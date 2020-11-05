@@ -42,8 +42,8 @@ html {
 .footer-text {
     color: var(--smokewhite7);
     text-align: justify;
-    font-family: 'Tajawal', sans-serif;
-    font-size: 16px;
+    font-family: 'Quicksands', sans-serif;
+    font-size: 14px;
 }
 .table {
     margin: 0;
@@ -63,6 +63,12 @@ td {
 }
 .table-dark.table-striped tbody tr:nth-of-type(even) {
     background-color: var(--grey);
+}
+#date-start {
+    text-align: right;
+}
+#date-end {
+    text-align: right;
 }
 a {
     color: var(--indigo);
