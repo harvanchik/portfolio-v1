@@ -30,7 +30,7 @@ html {
     filter: grayscale(0%);
 }
 .footer-title {
-    font-family: 'Grandstander', cursive;
+    font-family: 'Grandstander', sans-serif;
     font-size: 30px;
     margin-bottom: 0px;
 }
@@ -54,7 +54,6 @@ th {
 }
 .thead-darker th {
     background-color: var(--grey8) !important;
-    /* font-family: 'Quicksand', sans-serif; */
 }
 td {
     font-size: 15px;
@@ -80,9 +79,4 @@ h1 {
     font-size: 45px;
     color: var(--smokewhite1);
     margin: 0;
-}
-@media screen and (max-width: 800px) {
-    #location {
-        display: none;
-    }
 }
