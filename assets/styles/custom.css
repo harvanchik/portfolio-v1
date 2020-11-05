@@ -31,7 +31,7 @@ html {
 }
 .footer-title {
     font-family: 'Grandstander', sans-serif;
-    font-size: 30px;
+    font-size: 35px;
     margin-bottom: 0px;
 }
 .footer-divider {
@@ -71,10 +71,14 @@ td {
     text-align: right;
 }
 a {
-    color: var(--indigo);
+    color: var(--indigo2);
+}
+tbody a {
+    color: #bc8cff;
 }
 a:hover {
-    color: var(--indigo4);
+    /* color: var(--indigo4); */
+    color: rgb(46, 235, 46);
 }
 a:active {
     color: var(--grey2);
