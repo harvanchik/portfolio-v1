@@ -7,7 +7,6 @@
 html {
     font-family: 'Quicksand', sans-serif;
 }
-
 .bg-grey-light {
     background-color: var(--grey6);
 }
@@ -21,6 +20,9 @@ html {
     color: var(--grey8);
     display: block;
     padding: 0.5rem 1rem;
+}
+.nav-border {
+    border-bottom: 1px solid var(--grey4);
 }
 .media-icon {
     filter: grayscale(60%);
@@ -90,3 +92,14 @@ h1 {
     color: var(--smokewhite1);
     margin: 0;
 }
+/* .skip-link {
+  position: absolute;
+  background: #00000000;
+  color: rgba(255, 255, 255, 0);
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+} */
