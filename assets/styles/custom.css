@@ -90,8 +90,7 @@ tbody a {
     color: #bc8cff;
 }
 a:hover {
-    /* color: var(--indigo4); */
-    color: rgb(46, 235, 46);
+    color: var(--indigo4);
 }
 a:active {
     color: var(--grey2);
@@ -111,4 +110,38 @@ h1 {
 #table #number {
     font-weight: bolder;
     text-align: center;
+}
+#priority {
+    text-align: center;
+}
+#completed {
+    text-align: right;
+}
+td#priority {
+    padding: 6px 6px 6px 6px !important;
+}
+td#priority .badge {
+    min-height: auto;
+    min-width: 50px;
+    font-size: 16px;
+}
+.badge.priority-low {
+    background-color: rgb(255, 59, 59);
+}
+#priority span.priority-low:before {
+    content: 'Low';
+}
+.badge.priority-medium {
+    background-color: rgb(253, 221, 80);
+    color: black;
+}
+#priority span.priority-medium:before {
+    content: 'Medium';
+}
+.badge.priority-high {
+    background-color: rgb(83, 253, 112);
+    color: black;
+}
+#priority span.priority-high:before {
+    content: 'High';
 }
