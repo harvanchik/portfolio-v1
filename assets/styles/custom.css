@@ -51,6 +51,17 @@ html {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
 }
+.table.auto-num {
+    counter-reset: rowNumber - 1;   /* automatic row counter */
+}
+table.auto-num tr {
+    counter-increment: rowNumber;
+}
+table.auto-num tr td#number:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
 th {
     font-size: 18px;
 }
@@ -92,14 +103,12 @@ h1 {
     color: var(--smokewhite1);
     margin: 0;
 }
-/* .skip-link {
-  position: absolute;
-  background: #00000000;
-  color: rgba(255, 255, 255, 0);
-  padding: 8px;
-  z-index: 100;
+#percentage {
+    font-size: 18px;
+    font-weight: bolder;
+    padding-right: 5px;
 }
-
-.skip-link:focus {
-  top: 0;
-} */
+#table #number {
+    font-weight: bolder;
+    text-align: center;
+}
