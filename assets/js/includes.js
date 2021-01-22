@@ -1,11 +1,24 @@
 // Loading HTML
 $(function () {
-    $("#nav").load("/assets/html/nav.html");
+    $("#header").load("/assets/html/header.html");
 });
 $(function () {
     $("#footer").load("/assets/html/footer.html");
 });
-// Age
+
+/**
+ * Toggles the navigation menu
+ */
+function toggleMenu() {
+    const menu = document.querySelector('#menu');
+    menu.classList.toggle('hidden');
+}
+
+/**
+ * Age calculator
+ * @param date The date in string form.
+ * @returns the amount of whole years that have passed since the given date.
+ */
 function getAge(dateString) {
     let today = new Date();
     let birthDate = new Date(dateString);

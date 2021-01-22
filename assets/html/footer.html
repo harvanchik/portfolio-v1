@@ -1,63 +1,66 @@
-<!-- Container -->
-<div class="container-fluid bg-grey-dark px-0 py-4 py-lg-5">
-    <div class="container">
-        <!-- Footer -->
-        <div class="row"
-             style="display: flex; justify-content: space-between; color: rgb(245, 245, 245);">
-            <div class="col-12 col-lg-4 px-4 mb-4">
-                <p class="footer-title">ABOUT</p>
-                <hr class="footer-divider">
-                <p class="footer-text">My name is Jake Harvanchik, and I am currently
-                    <span id="myAge"></span> years old. I enjoy baseball, hockey, computers, nature, and comedy. I reside in Los Angeles County where I have lived my entire life. Currently, I am a junior software developer for a small business dealing with agribusinesses.
-                </p>
+<div class="flex bg-gray-200 dark:bg-gray-800 p-5">
+    <div class="container flex mx-auto xl:px-40 justify-between sm:items-center">
+        <div class="grid grid-cols-3 md:grid-cols-10 gap-x-14 text-gray-800 dark:text-gray-100">
+            <!-- About Me -->
+            <div class="col-span-4 mb-7">
+                <p class="text-3xl font-grandstander font-semibold">ABOUT ME</p>
+                <div class="my-1.5 border-solid border-current border-b-4 w-36"></div>
+                <p class="text-xs sm:text-sm text-justify">My name is Jake Harvanchik, and I am currently <span id="myAge"></span> years old. I enjoy baseball, hockey, programming, nature, and comedy. I reside in Los Angeles County where I have lived my entire life. Currently, I am a junior software developer for a small business dealing with agribusinesses.</p>
             </div>
-            <div class="col-12 col-lg-4 px-4 mb-4">
-                <p class="footer-title">LINKS</p>
-                <hr class="footer-divider">
+            <!-- Website Links -->
+            <div class="col-span-3 sm:col-span-3 mb-7">
+                <p class="text-3xl font-grandstander font-semibold">LINKS</p>
+                <div class="my-1.5 border-solid border-current border-b-4 w-36"></div>
+                <ul class="text-sm sm:text-base">
+                    <li><a href="#" class="text-indigo-600 hover:text-indigo-800" target="_blank">About Me</a></li>
+                    <li class="mt-1"><a href="#" class="text-indigo-600 hover:text-indigo-800" target="_blank">Experience</a></li>
+                    <li class="mt-1"><a href="#" class="text-indigo-600 hover:text-indigo-800" target="_blank">Goals</a></li>
+                    <li class="mt-1"><a href="#" class="text-indigo-600 hover:text-indigo-800" target="_blank">Contact</a></li>
+                </ul>
             </div>
-            <div class="col-12 col-lg-4 px-4 mb-4">
-                <p class="footer-title">CONTACT</p>
-                <hr class="footer-divider">
-                <p class="footer-text">
-                    Feel free to contact me via any of the listed platforms below. You may also send me an email to the address
-                    <a href="mailto:jake.work@harvhouse.com"
-                       target="_blank">jake.work@harvhouse.com</a>.
+            <!-- Contact -->
+            <div class="col-span-4 sm:col-span-3 mb-7">
+                <p class="text-3xl font-grandstander font-semibold">CONTACT</p>
+                <div class="my-1.5 border-solid border-current border-b-4 w-36"></div>
+                <p class="text-xs sm:text-sm mb-2">You may send me an email at
+                    <a href="mailto:jake.work@harvhouse.com" class=" text-indigo-600 hover:text-indigo-800" target="_blank"><strong>jake.work@harvhouse.com</strong></a> or contact me via any of the listed platforms below.
                 </p>
-                <div class="row" style="display: flex; justify-content: space-between;">
-                    <a href="https://twitter.com/harvanchik" rel="noreferrer"
-                       target="_blank"
-                       data-toggle="tooltip" title="Twitter">
-                        <img src="/assets/img/svg/twitter-circle.svg" alt="twitter"
-                             class="media-icon"
-                             style="width: 40px;">
+                <div class="flex justify-between mt-3">
+                    <a href="http://twitter.com/harvanchik" target="_blank">
+                        <img src=" /assets/images/svg/twitter-circle.svg"
+                             alt="twitter logo"
+                             data-tippy-content="Twitter"
+                             class="media-icon w-7 mx-auto">
                     </a>
-                    <a href="https://www.instagram.com/harvanchik/" rel="noreferrer"
-                       target="_blank"
-                       data-toggle="tooltip" title="Instagram">
-                        <img src="/assets/img/svg/instagram-circle.svg" alt="instagram"
-                             class="media-icon"
-                             style="width: 40px;">
+                    <a href="http://linkedin.com/in/jake-harvanchik-255777157" target="_blank">
+                        <img src=" /assets/images/svg/linkedin-circle.svg"
+                             alt="linkedin logo"
+                             data-tippy-content="LinkedIn"
+                             class="media-icon w-7 mx-auto">
                     </a>
-                    <a href="https://www.linkedin.com/in/jake-harvanchik-255777157" rel="noreferrer"
-                       target="_blank"
-                       data-toggle="tooltip" title="LinkedIn">
-                        <img src="/assets/img/svg/linkedin-circle.svg" alt="linkedin"
-                             class="media-icon"
-                             style="width: 40px;">
+                    <a href="http://instagram.com/harvanchik" target="_blank">
+                        <img src=" /assets/images/svg/instagram-circle.svg"
+                             alt="instagram logo"
+                             data-tippy-content="Instagram"
+                             class="media-icon w-7 mx-auto">
                     </a>
-                    <a href="https://www.youtube.com/channel/UCZ-FNPTXy4XRJ_WdBgg-geg" rel="noreferrer"
-                       target="_blank"
-                       data-toggle="tooltip" title="YouTube">
-                        <img src="/assets/img/svg/youtube.svg" alt="youtube"
-                             class="media-icon"
-                             style="width: 40px;">
+                    <a href="http://github.com/harvanchik" target="_blank">
+                        <img src=" /assets/images/svg/github-circle.svg"
+                             alt="github logo"
+                             data-tippy-content="GitHub"
+                             class="media-icon w-7 mx-auto">
                     </a>
-                    <a href="https://github.com/harvanchik" rel="noreferrer"
-                       target="_blank"
-                       data-toggle="tooltip" title="GitHub">
-                        <img src="/assets/img/svg/github-circle.svg" alt="github"
-                             class="media-icon"
-                             style="width: 40px;">
+                    <a href="http://parler.com/profile/harvanchik" target="_blank">
+                        <img src=" /assets/images/svg/parler-circle.svg"
+                             alt="parler logo"
+                             data-tippy-content="Parler"
+                             class="media-icon w-7 mx-auto">
+                    </a>
+                    <a href="http://youtube.com/channel/UCZ-FNPTXy4XRJ_WdBgg-geg" target="_blank">
+                        <img src=" /assets/images/svg/youtube.svg"
+                             alt="youtube logo"
+                             data-tippy-content="YouTube"
+                             class="media-icon w-7 mx-auto">
                     </a>
                 </div>
             </div>
@@ -65,10 +68,6 @@
     </div>
 </div>
 <script>
-    // Tooltips
-    $(document).ready(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-    // Age
-    document.getElementById("myAge").innerHTML = this.getAge('12/23/1999');
+    tippy('[data-tippy-content]');
+    $("#myAge").text(this.getAge("12/23/1999"));
 </script>
