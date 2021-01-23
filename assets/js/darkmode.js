@@ -38,12 +38,3 @@ if (darkModeStorage === 'true') {
 } else {
     disableDarkMode();
 }
-
-/**
- * Event listen that listens for click on dark mode toggle button
- */
-// darkModeToggle.on('click', () => {
-//     // update local storage
-//     darkModeStorage = localStorage.getItem('darkMode');
-//     toggleDarkMode();
-// });
