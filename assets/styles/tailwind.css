@@ -11,3 +11,7 @@
 .media-icon:focus {
     filter: grayscale(0);
 }
+
+html *:not(a) {
+    transition: background-color 750ms, color 250ms;
+}

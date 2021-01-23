@@ -15,15 +15,23 @@ function toggleMenu() {
 }
 
 /**
+ * Toggles dark mode
+ */
+function toggleDarkMode() {
+    const body = document.querySelector('#body');
+    body.classList.toggle('dark');
+}
+
+/**
  * Age calculator
  * @param date The date in string form.
  * @returns the amount of whole years that have passed since the given date.
  */
 function getAge(dateString) {
-    let today = new Date();
-    let birthDate = new Date(dateString);
+    const today = new Date();
+    const birthDate = new Date(dateString);
     let age = today.getFullYear() - birthDate.getFullYear();
-    let m = today.getMonth() - birthDate.getMonth();
+    const m = today.getMonth() - birthDate.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
         age--;
     }
