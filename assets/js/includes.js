@@ -10,8 +10,8 @@ $(function () {
  * Toggles the navigation menu
  */
 function toggleMenu() {
-    const menu = document.querySelector('#menu');
-    menu.classList.toggle('hidden');
+    const menu = $('#menu');
+    menu.toggleClass('hidden');
 }
 
 /**
