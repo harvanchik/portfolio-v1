@@ -1,16 +1,23 @@
 let darkModeStorage = localStorage.getItem('darkMode');
-const darkModeToggle = document.querySelector('#dark-toggle-button');
+const darkModeToggle = $('#dark-toggle-button');
+const body = $('#body');
+
+let sunMoonIcon = $('#sun-moon');
 
 const enableDarkMode = () => {
-    document.body.classList.add('dark');
+    body.addClass('dark');
+    sunMoonIcon.addClass('fa-sun');
     localStorage.setItem('darkMode', 'true');
 };
+
 const disableDarkMode = () => {
-    document.body.classList.remove('dark');
+    body.removeClass('dark');
+    sunMoonIcon.addClass('fa-moon');
     localStorage.setItem('darkMode', null);
 };
 
 const toggleDarkMode = () => {
+    sunMoonIcon = $('#sun-moon');       // must update the reference to the element since fontawesome changes it from an <i> to an <svg>
     if (darkModeStorage === 'true') {
         disableDarkMode();
     } else {
@@ -18,11 +25,19 @@ const toggleDarkMode = () => {
     }
 };
 
+/**
+ * Initializes the dark mode on page load
+ */
 if (darkModeStorage === 'true') {
     enableDarkMode();
+} else {
+    disableDarkMode();
 }
 
-darkModeToggle.addEventListener('click', () => {
+/**
+ * Event listen that listens for click on dark mode toggle button
+ */
+darkModeToggle.on('click', () => {
     // update local storage
     darkModeStorage = localStorage.getItem('darkMode');
     toggleDarkMode();
