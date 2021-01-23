@@ -5,7 +5,7 @@ module.exports = {
     mode: 'layers',
     content: ['/public/**/*.html', '/assets/html/*.html', '/assets/js/*.js']
   },
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
