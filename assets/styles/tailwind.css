@@ -16,7 +16,7 @@
 
 /* Fade transition for background & font colors when toggling dark mode */
 html *:not(a) {
-    transition: background-color 750ms, color 250ms;
+    transition: background-color 500ms, color 250ms;
 }
 
 /* The Dark Mode Toggle Button */
