@@ -33,6 +33,11 @@ if (darkModeStorage === 'true') {
 } else {
     disableDarkMode();
 }
+// if the class has no icon for some reason, just give it the fa-sun class
+if (!(sunMoonIcon.hasClass('fa-sun')) && !(sunMoonIcon.hasClass('fa-moon'))) {
+    sunMoonIcon = $('#sun-moon');
+    sunMoonIcon.addClass('fa-sun');
+}
 
 /**
  * Event listen that listens for click on dark mode toggle button
