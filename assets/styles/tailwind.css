@@ -2,16 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Social media icons grayscale */
 .media-icon {
     cursor: pointer;
     filter: grayscale(50%);
 }
 
+/* Social media icons full color on hover and focus */
 .media-icon:hover,
 .media-icon:focus {
     filter: grayscale(0);
 }
 
+/* Fade transition for background & font colors when toggling dark mode */
 html *:not(a) {
     transition: background-color 750ms, color 250ms;
 }
