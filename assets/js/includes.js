@@ -15,14 +15,6 @@ function toggleMenu() {
 }
 
 /**
- * Toggles dark mode
- */
-function toggleDarkMode() {
-    const body = document.querySelector('#body');
-    body.classList.toggle('dark');
-}
-
-/**
  * Age calculator
  * @param date The date in string form.
  * @returns the amount of whole years that have passed since the given date.
