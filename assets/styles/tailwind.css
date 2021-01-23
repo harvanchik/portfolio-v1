@@ -8,6 +8,10 @@
 
 @tailwind utilities;
 
+html * {
+    overflow-x: hidden;
+}
+
 /* Social media icons grayscale */
 .media-icon {
     cursor: pointer;
