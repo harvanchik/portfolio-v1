@@ -5,6 +5,22 @@ module.exports = {
     mode: 'layers',
     content: ['/public/**/*.html', '/assets/html/*.html', '/assets/js/*.js']
   },
+  rules: {
+    "at-rule-no-unknown": [
+      true,
+      {
+        ignoreAtRules: [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen",
+        ],
+      },
+    ],
+    "declaration-block-trailing-semicolon": null,
+    "no-descending-specificity": null,
+  },
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
@@ -29,4 +45,5 @@ module.exports = {
     },
   },
   plugins: [],
+  extends: ['stylelint-config-recommended']
 };
