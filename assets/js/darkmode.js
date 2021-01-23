@@ -1,5 +1,5 @@
 let darkModeStorage = localStorage.getItem('darkMode');
-const darkModeToggle = document.querySelector('#dark-toggle-button');
+const darkModeToggle = $('#dark-toggle-button');
 const body = $('#body');
 
 let sunMoonIcon = $('#sun-moon');
@@ -37,7 +37,7 @@ if (darkModeStorage === 'true') {
 /**
  * Event listen that listens for click on dark mode toggle button
  */
-darkModeToggle.addEventListener('click', () => {
+darkModeToggle.on('click', () => {
     // update local storage
     darkModeStorage = localStorage.getItem('darkMode');
     toggleDarkMode();
