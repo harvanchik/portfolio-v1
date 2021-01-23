@@ -16,7 +16,12 @@ const disableDarkMode = () => {
     localStorage.setItem('darkMode', null);
 };
 
+/**
+ * Toggle dark mode
+ * Switched from using event listener, because Safari iOS didn't recogize it
+ */
 const toggleDarkMode = () => {
+    darkModeStorage = localStorage.getItem('darkMode');
     sunMoonIcon = $('#sun-moon');       // must update the reference to the element since fontawesome changes it from an <i> to an <svg>
     if (darkModeStorage === 'true') {
         disableDarkMode();
@@ -37,8 +42,8 @@ if (darkModeStorage === 'true') {
 /**
  * Event listen that listens for click on dark mode toggle button
  */
-darkModeToggle.on('click', () => {
-    // update local storage
-    darkModeStorage = localStorage.getItem('darkMode');
-    toggleDarkMode();
-});
+// darkModeToggle.on('click', () => {
+//     // update local storage
+//     darkModeStorage = localStorage.getItem('darkMode');
+//     toggleDarkMode();
+// });
