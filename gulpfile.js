@@ -101,5 +101,4 @@ gulp.task('minHTML', minHTML);
 gulp.task('postCSS', postCSS);
 gulp.task('minJS', minJS);
 gulp.task('copyImages', copyImages);
-gulp.task('revision', revision);
 gulp.task('revRewrite', revRewrite);
