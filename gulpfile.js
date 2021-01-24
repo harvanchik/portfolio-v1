@@ -4,9 +4,9 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const purgecss = require('@fullhuman/postcss-purgecss');
-// const purgecss = require('gulp-purgecss');
 const htmlmin = require('gulp-htmlmin');
-const minifyjs = require("gulp-minify");
+const minifyjs = require('gulp-minify');
+const svgmin = require('gulp-svgmin');
 
 // const revision = require('gulp-rev-all');
 
@@ -55,14 +55,22 @@ function minJS() {
 		.pipe(gulp.dest('./docs/assets/js'));
 }
 
+// Gulp task to copy images, minify SVGs
+function copyImages() {
+	return gulp.src('./assets/images/**/*.{png,jpg,jpeg,gif,svg}')
+		.pipe(svgmin())
+		.pipe(gulp.dest('./docs/assets/images'));
+}
+
 // Gulp task to remove all contents of the 'docs' folder
 function clean() {
-	return del(['./docs/**', '!./docs']);
+	return del(['./docs/**', '!./docs', '!./docs/CNAME']);
 }
 
 // Gulp default task (run by typing 'gulp' in the console)
-gulp.task('default', gulp.series(clean, gulp.parallel(postCSS, minHTML, minJS)));
+gulp.task('default', gulp.series(clean, gulp.parallel(postCSS, minHTML, minJS, copyImages)));
 
 gulp.task('minHTML', minHTML);
 gulp.task('postCSS', postCSS);
 gulp.task('minJS', minJS);
+gulp.task('copyImages', copyImages);

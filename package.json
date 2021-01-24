@@ -27,6 +27,7 @@
     "gulp-postcss": "^9.0.0",
     "gulp-purgecss": "^4.0.0",
     "gulp-rev-all": "^2.0.3",
+    "gulp-svgmin": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "postcss": "^8.2.4",
     "readable-stream": "^3.6.0",
