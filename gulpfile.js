@@ -50,6 +50,11 @@ function minJS() {
 			noSource: true,
 			ext: {
 				min: '.js'
+			},
+			compress: {
+				dead_code: true,
+				unused: true,
+				drop_debugger: true
 			}
 		}))
 		.pipe(gulp.dest('./docs/assets/js'));
