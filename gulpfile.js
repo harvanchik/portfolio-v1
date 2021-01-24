@@ -71,25 +71,13 @@ function minJS() {
 
 // Gulp task to copy images, minify SVGs
 function copyImages() {
-	return gulp.src('./assets/images/**/*.{png,jpg,jpeg,gif,svg}')
+	return gulp.src('./assets/images/**/*.{png,jpg,jpeg,gif,svg,webp,pdf}')
 		.pipe(svgmin())
 		.pipe(rev())
 		.pipe(gulp.dest('./docs/assets/images'))
 		.pipe(rev.manifest({
 			merge: true
 		}))
-		.pipe(gulp.dest('./docs/assets'));
-}
-
-// Gulp task to revision all assets and create manifest for rewriting references
-function revision() {
-	return gulp.src(['./docs/assets/**/*.{css,js}'], { base: 'docs' })
-		// return gulp.src(['./docs/assets/**/*.{html,css,js,png,jpg,jpeg,gif,svg,webp}'])
-		.pipe(rev())
-		.pipe(gulp.dest('/docs/assets'))
-		.pipe(rev.manifest())
-		.pipe(gulp.dest('./docs/assets'))
-		.pipe(rev.manifest())
 		.pipe(gulp.dest('./docs/assets'));
 }
 
