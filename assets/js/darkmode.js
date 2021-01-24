@@ -7,13 +7,15 @@ let sunMoonIcon = $('#sun-moon');
 const enableDarkMode = () => {
     body.addClass('dark');
     sunMoonIcon.addClass('fa-sun');
+    sunMoonIcon.removeClass('fa-moon');
     localStorage.setItem('darkMode', 'true');
 };
 
 const disableDarkMode = () => {
     body.removeClass('dark');
     sunMoonIcon.addClass('fa-moon');
-    localStorage.setItem('darkMode', null);
+    sunMoonIcon.removeClass('fa-sun');
+    localStorage.setItem('darkMode', 'false');
 };
 
 /**
@@ -33,8 +35,11 @@ const toggleDarkMode = () => {
 /**
  * Initializes the dark mode on page load
  */
-if (darkModeStorage === 'true') {
-    enableDarkMode();
-} else {
-    disableDarkMode();
-}
+window.onload = function () {
+    sunMoonIcon = $('#sun-moon');
+    if (darkModeStorage === 'true') {
+        enableDarkMode();
+    } else {
+        disableDarkMode();
+    }
+};

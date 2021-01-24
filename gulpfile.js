@@ -28,7 +28,7 @@ function minHTML() {
 
 // Gulp task to minify the css file and remove all unused css
 function postCSS() {
-	const plugin = [
+	const plugins = [
 		autoprefixer(),
 		cssnano(),
 		purgecss({
@@ -37,14 +37,16 @@ function postCSS() {
 		})
 	];
 	return gulp.src(['./assets/styles/styles.css'])
-		.pipe(postcss(plugin))
-		// .pipe(gulp.dest('./docs/assets/styles'))
+		.pipe(postcss(plugins))
 		.pipe(rev())
 		.pipe(gulp.dest('./docs/assets/styles'))
-		.pipe(rev.manifest({
-			merge: true
-		}))
-		.pipe(gulp.dest('./docs/assets'));
+		.pipe(rev.manifest(
+			{
+				merge: false,
+				// base: './docs/assets'
+			}
+		))
+		.pipe(gulp.dest('./'));
 }
 
 // Gulp task to minify JavaScript files
@@ -64,9 +66,10 @@ function minJS() {
 		.pipe(rev())
 		.pipe(gulp.dest('./docs/assets/js'))
 		.pipe(rev.manifest({
+			// base: './docs/assets',
 			merge: true
 		}))
-		.pipe(gulp.dest('./docs/assets'));
+		.pipe(gulp.dest('./'));
 }
 
 // Gulp task to copy images, minify SVGs
@@ -76,14 +79,16 @@ function copyImages() {
 		.pipe(rev())
 		.pipe(gulp.dest('./docs/assets/images'))
 		.pipe(rev.manifest({
+			// base: './docs/assets',
 			merge: true
+
 		}))
-		.pipe(gulp.dest('./docs/assets'));
+		.pipe(gulp.dest('./'));
 }
 
 // Gulp task to rewrite references to files in the manifest
 function revRewrite() {
-	const manifest = readFileSync('./docs/assets/rev-manifest.json');
+	const manifest = readFileSync('./rev-manifest.json');
 	return gulp.src('./docs/**/*.html')
 		.pipe(rewrite({ manifest }))
 		.pipe(gulp.dest('./docs'));
@@ -95,7 +100,7 @@ function clean() {
 }
 
 // Gulp default task (run by typing 'gulp' in the console)
-gulp.task('default', gulp.series(clean, gulp.parallel(postCSS, minHTML, minJS, copyImages), revRewrite));
+gulp.task('default', gulp.series(clean, postCSS, gulp.series(minHTML, minJS, copyImages), revRewrite));
 
 gulp.task('minHTML', minHTML);
 gulp.task('postCSS', postCSS);
