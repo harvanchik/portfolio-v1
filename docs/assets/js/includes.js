@@ -1,0 +1,1 @@
+function toggleMenu(){$("#menu").toggleClass("hidden")}function getAge(t){const e=new Date,n=new Date(t),o=e.getMonth()-n.getMonth();let l=e.getFullYear()-n.getFullYear();return(o<0||0===o&&e.getDate()<n.getDate())&&l--,l.toString()}$(function(){$("#header").load("./assets/html/header.html")}),$(function(){$("#footer").load("./assets/html/footer.html")});

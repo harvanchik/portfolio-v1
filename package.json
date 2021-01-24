@@ -12,13 +12,24 @@
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.2.3",
-    "cssnano": "^4.1.10",
+    "gulp-htmlmin": "^5.0.1",
     "onchange": "^7.1.0",
-    "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.0",
+    "cssnano": "^4.1.10",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-purgecss": "^4.0.0",
+    "gulp-rev-all": "^2.0.3",
+    "gulp-uglify": "^3.0.2",
+    "postcss": "^8.2.4",
+    "readable-stream": "^3.6.0",
     "stylelint-config-recommended": "^3.0.0"
   }
 }

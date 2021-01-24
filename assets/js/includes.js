@@ -1,9 +1,9 @@
 // Loading HTML
 $(function () {
-    $("#header").load("/assets/html/header.html");
+    $('#header').load('./assets/html/header.html');
 });
 $(function () {
-    $("#footer").load("/assets/html/footer.html");
+    $('#footer').load('./assets/html/footer.html');
 });
 
 /**
@@ -22,8 +22,8 @@ function toggleMenu() {
 function getAge(dateString) {
     const today = new Date();
     const birthDate = new Date(dateString);
-    let age = today.getFullYear() - birthDate.getFullYear();
     const m = today.getMonth() - birthDate.getMonth();
+    let age = today.getFullYear() - birthDate.getFullYear();
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
         age--;
     }

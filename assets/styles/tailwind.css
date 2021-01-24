@@ -24,3 +24,8 @@
 html *:not(a) {
     transition: background-color 500ms, color 250ms;
 }
+/* Uppercase all letters and make first letter bigger */
+.uppercase-small {
+    text-transform: capitalize;
+    font-variant: small-caps;
+}
