@@ -1,3 +1,4 @@
+const { readFileSync } = require('fs');
 const gulp = require('gulp');
 const del = require('del');
 const postcss = require('gulp-postcss');
@@ -7,8 +8,8 @@ const purgecss = require('@fullhuman/postcss-purgecss');
 const htmlmin = require('gulp-htmlmin');
 const minifyjs = require('gulp-minify');
 const svgmin = require('gulp-svgmin');
-
-// const revision = require('gulp-rev-all');
+const rev = require('gulp-rev');
+const rewrite = require('gulp-rev-rewrite');
 
 // Gulp task to minify the HTML files
 function minHTML() {
@@ -37,10 +38,13 @@ function postCSS() {
 	];
 	return gulp.src(['./assets/styles/styles.css'])
 		.pipe(postcss(plugin))
-		// .pipe(purgecss({
-		// 	content: ['./assets/html/*.html', './*.html']
-		// }))
-		.pipe(gulp.dest('./docs/assets/styles'));
+		// .pipe(gulp.dest('./docs/assets/styles'))
+		.pipe(rev())
+		.pipe(gulp.dest('./docs/assets/styles'))
+		.pipe(rev.manifest({
+			merge: true
+		}))
+		.pipe(gulp.dest('./docs/assets'));
 }
 
 // Gulp task to minify JavaScript files
@@ -57,14 +61,44 @@ function minJS() {
 				drop_debugger: true
 			}
 		}))
-		.pipe(gulp.dest('./docs/assets/js'));
+		.pipe(rev())
+		.pipe(gulp.dest('./docs/assets/js'))
+		.pipe(rev.manifest({
+			merge: true
+		}))
+		.pipe(gulp.dest('./docs/assets'));
 }
 
 // Gulp task to copy images, minify SVGs
 function copyImages() {
 	return gulp.src('./assets/images/**/*.{png,jpg,jpeg,gif,svg}')
 		.pipe(svgmin())
-		.pipe(gulp.dest('./docs/assets/images'));
+		.pipe(rev())
+		.pipe(gulp.dest('./docs/assets/images'))
+		.pipe(rev.manifest({
+			merge: true
+		}))
+		.pipe(gulp.dest('./docs/assets'));
+}
+
+// Gulp task to revision all assets and create manifest for rewriting references
+function revision() {
+	return gulp.src(['./docs/assets/**/*.{css,js}'], { base: 'docs' })
+		// return gulp.src(['./docs/assets/**/*.{html,css,js,png,jpg,jpeg,gif,svg,webp}'])
+		.pipe(rev())
+		.pipe(gulp.dest('/docs/assets'))
+		.pipe(rev.manifest())
+		.pipe(gulp.dest('./docs/assets'))
+		.pipe(rev.manifest())
+		.pipe(gulp.dest('./docs/assets'));
+}
+
+// Gulp task to rewrite references to files in the manifest
+function revRewrite() {
+	const manifest = readFileSync('./docs/assets/rev-manifest.json');
+	return gulp.src('./docs/**/*.html')
+		.pipe(rewrite({ manifest }))
+		.pipe(gulp.dest('./docs'));
 }
 
 // Gulp task to remove all contents of the 'docs' folder
@@ -73,9 +107,11 @@ function clean() {
 }
 
 // Gulp default task (run by typing 'gulp' in the console)
-gulp.task('default', gulp.series(clean, gulp.parallel(postCSS, minHTML, minJS, copyImages)));
+gulp.task('default', gulp.series(clean, gulp.parallel(postCSS, minHTML, minJS, copyImages), revRewrite));
 
 gulp.task('minHTML', minHTML);
 gulp.task('postCSS', postCSS);
 gulp.task('minJS', minJS);
 gulp.task('copyImages', copyImages);
+gulp.task('revision', revision);
+gulp.task('revRewrite', revRewrite);
