@@ -36,10 +36,20 @@ const toggleDarkMode = () => {
  * Initializes the dark mode on page load
  */
 window.onload = function () {
-    sunMoonIcon = $('#sun-moon');
-    if (darkModeStorage === 'true') {
-        enableDarkMode();
-    } else {
-        disableDarkMode();
-    }
+    setTimeout(
+        async () => {
+            sunMoonIcon = $('#sun-moon');
+            if (darkModeStorage === 'true') {
+                enableDarkMode();
+            } else {
+                disableDarkMode();
+            }
+            // add loaded class to body just after setting the mode
+            // need this delay to disable fading of colors on initial load of page
+            setTimeout(
+                async () => {
+                    body.attr('loaded', true);
+                }, 15);
+        }, 10  // delay so that the body has time to finish loading
+    );
 };

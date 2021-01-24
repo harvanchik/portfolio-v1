@@ -21,7 +21,8 @@
 }
 
 /* Fade transition for background & font colors when toggling dark mode */
-html *:not(a) {
+/* purgecss ignore */
+html body[loaded='true'] *:not(a) {
     transition: background-color 500ms, color 250ms;
 }
 /* Uppercase all letters and make first letter bigger */
