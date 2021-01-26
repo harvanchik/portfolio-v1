@@ -40,12 +40,7 @@ function postCSS() {
 		.pipe(postcss(plugins))
 		.pipe(rev())
 		.pipe(gulp.dest('./docs/assets/styles'))
-		.pipe(rev.manifest(
-			{
-				merge: false,
-				// base: './docs/assets'
-			}
-		))
+		.pipe(rev.manifest({ merge: false }))
 		.pipe(gulp.dest('./'));
 }
 
@@ -65,24 +60,26 @@ function minJS() {
 		}))
 		.pipe(rev())
 		.pipe(gulp.dest('./docs/assets/js'))
-		.pipe(rev.manifest({
-			// base: './docs/assets',
-			merge: true
-		}))
+		.pipe(rev.manifest({ merge: true }))
 		.pipe(gulp.dest('./'));
 }
 
-// Gulp task to copy images, minify SVGs
+// Gulp task to copy images
 function copyImages() {
-	return gulp.src('./assets/images/**/*.{png,jpg,jpeg,gif,svg,webp,pdf}')
-		.pipe(svgmin())
+	return gulp.src('./assets/images/**/*.{png,jpg,jpeg,gif,webp,pdf}')
 		.pipe(rev())
 		.pipe(gulp.dest('./docs/assets/images'))
-		.pipe(rev.manifest({
-			// base: './docs/assets',
-			merge: true
+		.pipe(rev.manifest({ merge: true }))
+		.pipe(gulp.dest('./'));
+}
 
-		}))
+// Gulp task to minify SVGs
+function minSVG() {
+	return gulp.src('./assets/images/svg/*.svg')
+		.pipe(svgmin())
+		.pipe(rev())
+		.pipe(gulp.dest('./docs/assets/images/svg'))
+		.pipe(rev.manifest({ merge: true }))
 		.pipe(gulp.dest('./'));
 }
 
@@ -100,10 +97,11 @@ function clean() {
 }
 
 // Gulp default task (run by typing 'gulp' in the console)
-gulp.task('default', gulp.series(clean, postCSS, gulp.series(minHTML, minJS, copyImages), revRewrite));
+gulp.task('default', gulp.series(clean, postCSS, gulp.series(minHTML, minJS, copyImages, minSVG), revRewrite));
 
 gulp.task('minHTML', minHTML);
 gulp.task('postCSS', postCSS);
 gulp.task('minJS', minJS);
 gulp.task('copyImages', copyImages);
+gulp.task('minSVG', minSVG);
 gulp.task('revRewrite', revRewrite);
