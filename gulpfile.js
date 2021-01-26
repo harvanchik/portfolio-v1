@@ -97,7 +97,7 @@ function clean() {
 }
 
 // Gulp default task (run by typing 'gulp' in the console)
-gulp.task('default', gulp.series(clean, postCSS, gulp.series(minHTML, minJS, copyImages, minSVG), revRewrite));
+gulp.task('default', gulp.series(clean, postCSS, gulp.parallel(minHTML, minJS, copyImages, minSVG), revRewrite));
 
 gulp.task('minHTML', minHTML);
 gulp.task('postCSS', postCSS);
