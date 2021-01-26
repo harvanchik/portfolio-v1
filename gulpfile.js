@@ -13,7 +13,7 @@ const rewrite = require('gulp-rev-rewrite');
 
 // Gulp task to minify the HTML files
 function minHTML() {
-	return gulp.src(['./**/*.html', '!./node_modules/**/*.html'])
+	return gulp.src(['./**/*.html', '!./node_modules/**/*'])
 		.pipe(htmlmin({
 			collapseWhitespace: true,
 			removeComments: true,
