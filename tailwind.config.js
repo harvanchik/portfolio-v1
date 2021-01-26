@@ -27,15 +27,31 @@ module.exports = {
       fontFamily: {
         'quicksand': ["'Quicksand'", 'sans-serif'],
         'lobster': ["'Lobster'", 'cursive'],
-        'grandstander': ["'Grandstander'", 'san-serif']
+        'grandstander': ["'Grandstander'", 'san-serif'],
+        'acme': ["'Acme'", 'san-serif']
       },
       colors: {
-        gray: colors.trueGray
+        gray: colors.trueGray,
+        cyan: colors.cyan,
+        teal: colors.teal,
+        lightblue: colors.lightBlue,
+        blue: {
+          950: '#091129'
+        }
       },
       spacing: {
         4.5: '1.125rem',
         5.5: '1.375rem',
-        6.5: '1.625rem'
+        6.5: '1.625rem',
+        98: '25rem',
+        100: '26rem',
+        102: '27rem',
+        104: '28rem',
+      },
+      fontSize: {
+        '0.5xl': '1.155rem',
+        '1.5xl': '1.375rem',
+        '4.5xl': '2.625rem'
       }
     },
   },
