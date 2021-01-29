@@ -14,7 +14,8 @@
     "autoprefixer": "^10.2.3",
     "onchange": "^7.1.0",
     "postcss-cli": "^8.3.1",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.0.2",
+    "theaterjs": "^3.2.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^4.0.0",
