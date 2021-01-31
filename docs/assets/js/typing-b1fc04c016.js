@@ -1,0 +1,1 @@
+const theater=theaterJS();theater.addActor("name",{speed:.25,accuracy:.6}).addActor("tagline",{speed:.95,accuracy:.8}),theater.addScene("name:Jake Harvanchik",500).addScene("tagline:Student majoring in Computer Science | Front-end web developer");

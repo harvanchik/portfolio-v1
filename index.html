@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Jake Harvanchik's Online Portfolio">
-    <meta name="keywords" content="jake, harvanchik, portfolio, resume">
+    <meta name="keywords" content="jake, harvanchik, portfolio, resume, harv, harvenchik, harvinchik, harvonchik, harvanchick, harvenchick, harvinchick, harvonchick, harvachik, harvachick, harvechik, harvechick, harvichick, harvichik, harvochik, harvochick, havarti, harvancheck, harvincheck, harvoncheck, harvenceck">
     <meta name="author" content="Jake Harvanchik">
     <title>Jake Harvanchik</title>
     <!-- Styles -->
     <link rel="stylesheet" href="./assets/styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Grandstander:wght@300;400;500;600;700&family=Acme&display=swap" rel="stylesheet" defer>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Grandstander:wght@300;400;500;600;700&family=Acme&display=swap" defer>
 
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" defer>
     <!-- Scripts -->
@@ -20,6 +20,9 @@
     <script src="https://unpkg.com/tippy.js@6" defer></script>
     <script src="./assets/js/includes.js" async></script>
     <script src="./assets/js/darkmode.js" async></script>
+    <!-- TheaterJS -->
+    <script src="./node_modules/theaterjs/dist/theater.min.js" defer></script>
+    <script src="./assets/js/typing.js" defer></script>
 </head>
 
 <body id="body" class="flex flex-col" loaded="false">
@@ -28,10 +31,11 @@
         <div class="container mx-auto xl:px-40">
             <div class="flex flex-col w-full justify-center">
                 <h1 class="text-4xl text-center leading-snug dark:text-gray-50 uppercase">
-                    Hey, I'm <br><span class="text-5xl uppercase-small font-semibold">Jake Harvanchik</span>
+                    Hey, I'm <br>
+                    <span id="name" class="text-5xl uppercase-small font-semibold">Jake Harvanchik</span>
                 </h1>
-                <h2 class="text-1.5xl text-center mt-3 font-thin text-black dark:text-gray-100">
-                    Student majoring in Computer Science | Front-end web developer
+                <h2 id="tagline" class="text-1.5xl text-center mt-3 font-thin text-black dark:text-gray-100">&nbsp;
+                    <!-- Student majoring in Computer Science | Front-end web developer -->
                 </h2>
             </div>
             <div class="flex h-96 mt-16 shadow-lg sm:rounded-lg">
