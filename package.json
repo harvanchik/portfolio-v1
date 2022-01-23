@@ -1,35 +1,37 @@
 {
-  "name": "portfolio_website",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "tw:build": "tailwindcss build ./assets/styles/tailwind.css -o ./assets/styles/styles.css",
-    "tw:watch": "onchange 'tailwind.config.js' './assets/styles/*.css' -- npm run tw:build"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "autoprefixer": "^10.2.3",
-    "onchange": "^7.1.0",
-    "postcss-cli": "^8.3.1",
-    "tailwindcss": "^2.0.2",
-    "theaterjs": "^3.2.0"
-  },
-  "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^4.0.0",
-    "cssnano": "^4.1.10",
-    "del": "^6.0.0",
-    "gulp": "^4.0.2",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-minify": "^3.1.0",
-    "gulp-postcss": "^9.0.0",
-    "gulp-replace": "^1.0.0",
-    "gulp-rev": "^9.0.0",
-    "gulp-rev-rewrite": "^4.0.0",
-    "gulp-svgmin": "^3.0.0",
-    "postcss": "^8.2.4",
-    "stylelint-config-recommended": "^3.0.0"
-  }
+    "name": "portfolio_website",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "npx tailwindcss -i ./assets/styles/tailwind.css -o ./assets/styles/styles.css --watch --jit --purge ./**/*.html",
+        "prod": "cross-env NODE_ENV=production npx tailwindcss -i ./assets/styles/tailwind.css -o ./assets/styles/styles.css --minify",
+        "gulp": "gulp",
+        "updates": "ncu"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "autoprefixer": "^10.2.3",
+        "onchange": "^7.1.0",
+        "postcss-cli": "^8.3.1",
+        "tailwindcss": "^2.0.2",
+        "theaterjs": "^3.2.0"
+    },
+    "devDependencies": {
+        "@fullhuman/postcss-purgecss": "^4.0.0",
+        "cssnano": "^4.1.10",
+        "del": "^6.0.0",
+        "gulp": "^4.0.2",
+        "gulp-htmlmin": "^5.0.1",
+        "gulp-minify": "^3.1.0",
+        "gulp-postcss": "^9.0.0",
+        "gulp-replace": "^1.0.0",
+        "gulp-rev": "^9.0.0",
+        "gulp-rev-rewrite": "^4.0.0",
+        "gulp-svgmin": "^3.0.0",
+        "postcss": "^8.2.4",
+        "stylelint-config-recommended": "^3.0.0"
+    }
 }
